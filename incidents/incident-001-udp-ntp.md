@@ -1,5 +1,5 @@
-Incident Report 001
 Detection and Analysis of Suspicious UDP NTP Traffic Using Zeek and Wazuh.
+
 Investigated suspicious outbound UDP/NTP traffic using Zeek and Wazuh, identifying anomalous connection behaviour indicative of potential beaconing activity.
  
 1.	Alert Summary
