@@ -58,7 +58,7 @@ The following characteristics were observed:
 - No known internal service or application justified the observed DNS activity
 - Query structure and frequency were inconsistent with CDNs or legitimate telemetry services
 - Behaviour aligned with known DNS-based C2 and tunneling techniques
-- During investigation, DNS-related UDP traffic to multicast addresses (224.0.0.251/252) on port 5353 was observed. This was identified as mDNS service discovery traffic rather than recursive DNS resolution. While it initially appeared anomalous due to lack of responses and S0 connection states, destination addressing and port usage confirmed benign behaviour.
+- During investigation, DNS-related UDP traffic to multicast addresses (224.0.0.251/252) on port 5353 was observed. This was identified as mDNS service discovery traffic rather than recursive DNS resolution. While it initially appeared anomalous due to lack of responses and S0 connection states, destination addressing and port usage confirmed benign behaviour (See evidence/screenshots/zeek-mdns-traffic.png for Zeek connection metadata confirming multicast DNS behaviour).
 
 ## Findings & Confidence
 **Assessment:** Likely malicious DNS tunneling behaviour  
