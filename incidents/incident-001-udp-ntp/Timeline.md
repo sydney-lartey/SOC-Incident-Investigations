@@ -1,6 +1,6 @@
 
 ---
-## `incident-001-suspicious-udp-ntp/timeline.md` (final text)
+## `incident-001-suspicious-udp-ntp/timeline.md`
 
 ```md
 # Timeline — Incident 001 (Suspicious UDP/NTP)
