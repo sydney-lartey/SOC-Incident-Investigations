@@ -1,0 +1,7 @@
+- Alert triggered in SIEM
+- Initial triage performed
+- Relevant logs identified
+- Behavioural patterns analysed
+- Correlation performed
+- Decision made (close / monitor / escalate)
+- Incident documented
