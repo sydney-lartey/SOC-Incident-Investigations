@@ -30,4 +30,69 @@ The detection focused on identifying **DNS query characteristics** commonly asso
 - High query frequency over a short time window
 - Lack of corresponding legitimate application behaviour
 
-**Ration**
+**Rationale:**
+DNS tunneling encodes data into subdomains, which results in long, random-looking queries. Malware frequently abuses DNS as it is typically allowed through network controls and inspected less deeply than other protocols.
+
+## Investigation Steps
+
+### 1) Validate DNS query patterns
+Reviewed Zeek `dns.log` entries associated with the alert, focusing on query structure and repetition.
+
+**Key fields analysed:**
+- `query`
+- `qtype_name`
+- `rcode_name`
+- `id.orig_h`
+- `answers`
+- `trans_id`
+
+### 2) Behavioural analysis
+The following characteristics were observed:
+- Repeated queries to the same parent domain
+- Subdomains significantly longer than typical hostnames
+- Subdomains appearing algorithmically generated
+- Query frequency exceeding expected application behaviour
+- Minimal or low-value DNS responses
+
+### 3) Contextual validation
+- No known internal service or application justified the observed DNS activity
+- Query structure and frequency were inconsistent with CDNs or legitimate telemetry services
+- Behaviour aligned with known DNS-based C2 and tunneling techniques
+
+## Findings & Confidence
+**Assessment:** Likely malicious DNS tunneling behaviour  
+**Confidence:** Medium–High
+
+**Why not “High”?**
+- Certain legitimate edge cases exist (e.g., CDNs, analytics, telemetry)
+- Endpoint confirmation is required to fully validate intent
+
+**Why escalation is justified:**
+- High-entropy, long subdomains
+- Consistent query repetition
+- Behavioural alignment with known tunneling techniques
+
+## Outcome
+**Status:** Escalated for deeper investigation
+
+The incident was escalated due to the likelihood of DNS being used as a covert communication channel. Additional endpoint and network correlation is required to confirm compromise and scope.
+
+## Recommended Next Actions
+
+### Immediate
+- Identify the endpoint generating the DNS queries
+- Inspect running processes, scheduled tasks, and persistence mechanisms
+- Validate whether the domain is known or authorised
+
+### Follow-up / Correlation
+- Correlate DNS activity with:
+  - Zeek `conn.log` for outbound connections
+  - Endpoint process creation and network telemetry
+- Monitor for increases in data volume or sustained beaconing
+- Block or sinkhole the domain if confirmed malicious
+
+## Lessons Learned
+- DNS is a common and effective channel for covert C2 communication
+- Behavioural analysis is critical for detecting DNS tunneling
+- High-frequency, high-entropy queries are strong indicators
+- Correlation across DNS, network, and endpoint logs improves confidence and reduces false positives
