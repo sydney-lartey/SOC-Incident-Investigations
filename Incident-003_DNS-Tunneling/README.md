@@ -43,7 +43,7 @@ Figure 1: conn.log showing unicast UDP/53 traffic and absence of multicast DNS p
 
 This is one of your strongest differentiators.
 
-## 4.2 Query Structure and Entropy
+### 4.2 Query Structure and Entropy
 
 Analysis of dns.log revealed DNS queries with near-maximum-length subdomain labels and high-entropy character sets consistent with encoded payloads. Many queries followed a sequential pattern, further indicating automated generation rather than human-driven domain lookups.
 
@@ -53,7 +53,7 @@ Figure 2: Long, high-entropy DNS queries extracted from dns.log.
 
 This is the flagship visual.
 
-## 4.3 Source Attribution and Frequency
+### 4.3 Source Attribution and Frequency
 
 Query frequency analysis showed that a single internal host (192.168.94.136) was responsible for the majority of anomalous DNS traffic. Other hosts generated minimal DNS activity, suggesting the behavior was isolated rather than network-wide.
 
