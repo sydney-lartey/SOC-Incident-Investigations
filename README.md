@@ -46,7 +46,7 @@ Key skills demonstrated:
 
 - Baseline vs anomaly reasoning
 
-## Incident 002 — TCP Port Scanning with Service Detection
+### Incident 002 — TCP Port Scanning with Service Detection
 
 Category: Reconnaissance
 
@@ -62,7 +62,7 @@ Key skills demonstrated:
 
 - Correlation of attacker tooling with passive network evidence
 
-## Incident 003 — DNS Tunneling (Flagship Investigation)
+### Incident 003 — DNS Tunneling (Flagship Investigation)
 
 Category: Covert Command-and-Control / Data Exfiltration
 
