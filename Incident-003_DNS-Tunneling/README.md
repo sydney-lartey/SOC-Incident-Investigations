@@ -6,7 +6,7 @@ Through packet capture and Zeek analysis, the traffic was validated as unicast D
 
 This sets the tone: clear, confident, not sensational.
 
-#2. Detection
+# 2. Detection
 
 The investigation began after observing abnormal DNS query patterns during network traffic analysis. These patterns included unusually long subdomain labels, non-human-readable character distributions, and sustained query frequency from a single internal host.
 
@@ -33,7 +33,7 @@ dns.log — DNS query and response details
 This is where you reference the setup without dumping commands.
 
 # 4. Analysis & Validation
-## 4.1 Transport Validation: DNS vs mDNS/LLMNR
+### 4.1 Transport Validation: DNS vs mDNS/LLMNR
 
 Connection-level analysis confirmed that all suspicious traffic occurred over unicast DNS (UDP/53) to the internal resolver at 192.168.94.2. No traffic was observed on UDP/5353 or UDP/5355, ruling out mDNS and LLMNR as potential causes.
 
