@@ -31,6 +31,10 @@ All incidents were captured at the network level and analyzed using packet captu
 
 The same host (192.168.94.136) is intentionally reused across multiple incidents to demonstrate progression from reconnaissance to more advanced malicious behavior.
 
+## Detection Engineering
+
+Each incident includes corresponding SIEM-style detection logic located in the `detections/` directory. These rules demonstrate how investigative findings can be translated into practical, behavior-based detections suitable for SOC environments.
+
 ## Incident Summary
 ### Incident 001 — UDP / NTP Traffic Validation
 
