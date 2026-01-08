@@ -5,34 +5,34 @@ This repository contains a series of hands-on SOC-style incident investigations 
 
 The investigations emphasize:
 
-Evidence-driven analysis
+- Evidence-driven analysis
 
-Protocol-level validation
+- Protocol-level validation
 
-Clear scoping and classification
+- Clear scoping and classification
 
-Practical response recommendations
+- Practical response recommendations
 
 All incidents were captured at the network level and analyzed using packet capture and Zeek, with supporting artifacts and screenshots included for transparency and reproducibility.
 
-Lab Environment
+## Lab Environment
 
-Network Sensor: Zeek (Ubuntu)
+- Network Sensor: Zeek (Ubuntu)
 
-Packet Capture: tcpdump
+- Packet Capture: tcpdump
 
-Analysis Framework: Zeek (conn.log, protocol-specific logs)
+- Analysis Framework: Zeek (conn.log, protocol-specific logs)
 
-Attacker / Simulator: Kali Linux (192.168.94.136)
+- Attacker / Simulator: Kali Linux (192.168.94.136)
 
-Victim Hosts: Windows and Linux systems
+- Victim Hosts: Windows and Linux systems
 
-DNS Resolver / Gateway: 192.168.94.2 (VMware NAT)
+- DNS Resolver / Gateway: 192.168.94.2 (VMware NAT)
 
 The same host (192.168.94.136) is intentionally reused across multiple incidents to demonstrate progression from reconnaissance to more advanced malicious behavior.
 
-Incident Summary
-Incident 001 — UDP / NTP Traffic Validation
+## Incident Summary
+### Incident 001 — UDP / NTP Traffic Validation
 
 Category: Baseline Protocol Analysis
 
@@ -40,13 +40,13 @@ This investigation validates legitimate outbound Network Time Protocol (NTP) tra
 
 Key skills demonstrated:
 
-Packet capture integrity
+- Packet capture integrity
 
-UDP protocol validation
+- UDP protocol validation
 
-Baseline vs anomaly reasoning
+- Baseline vs anomaly reasoning
 
-Incident 002 — TCP Port Scanning with Service Detection
+## Incident 002 — TCP Port Scanning with Service Detection
 
 Category: Reconnaissance
 
@@ -56,13 +56,13 @@ Service probing artifacts observed in multiple Zeek protocol logs corroborate ac
 
 Key skills demonstrated:
 
-Detection of scan patterns via connection metadata
+- Detection of scan patterns via connection metadata
 
-Differentiation between scan traffic and background noise
+- Differentiation between scan traffic and background noise
 
-Correlation of attacker tooling with passive network evidence
+- Correlation of attacker tooling with passive network evidence
 
-Incident 003 — DNS Tunneling (Flagship Investigation)
+## Incident 003 — DNS Tunneling (Flagship Investigation)
 
 Category: Covert Command-and-Control / Data Exfiltration
 
@@ -72,26 +72,26 @@ Behavioral indicators strongly align with DNS tunneling used for covert command-
 
 Key skills demonstrated:
 
-Transport-layer validation (DNS vs mDNS/LLMNR)
+- Transport-layer validation (DNS vs mDNS/LLMNR)
 
-High-entropy query analysis
+- High-entropy query analysis
 
-Behavioral detection and host attribution
+- Behavioral detection and host attribution
 
-SOC-style classification and response planning
+- SOC-style classification and response planning
 
 Methodology
 
 Each investigation follows a consistent SOC-aligned workflow:
 
-Traffic capture using tcpdump at the network sensor
+- Traffic capture using tcpdump at the network sensor
 
-Parsing and enrichment using Zeek
+- Parsing and enrichment using Zeek
 
-Evidence validation through protocol and behavioral analysis
+- Evidence validation through protocol and behavioral analysis
 
-Scoping and classification based on observed indicators
+- Scoping and classification based on observed indicators
 
-Response recommendations aligned with real SOC procedures
+- Response recommendations aligned with real SOC procedures
 
 Screenshots are included selectively to support analytical claims rather than replace narrative explanation.
